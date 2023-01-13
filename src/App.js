@@ -2,7 +2,7 @@ import React from 'react';
 import Container  from '@mui/material/Container';
 import Heading from './components/heading';
 import Connection from './components/Connection';
-import {isNewUser, setLuckyNumber, getBalance} from './utils/utils';
+import {isNewUser, getBalance} from './utils/utils';
 import UserInfo from './components/userInfo';
 import ChangeLuckyNumber from './components/changeLuckyNumber';
 class App extends React.Component{
@@ -29,7 +29,8 @@ class App extends React.Component{
 
   async connectionClick(e){
     if(typeof window.ethereum == 'undefined'){ 
-      alert("First install Metamask Extension")
+      alert("Install Metamask Extension")
+      return 0;
     }
 
     this.setState({status:"waiting"})

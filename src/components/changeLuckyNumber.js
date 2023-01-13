@@ -37,7 +37,7 @@ class ChangeLuckyNumber extends React.Component{
             this.setState({infoUpdating:true})
             this.setState({buttonStatus:"forInfo"})
             let tx = await setLuckyNumber(parseInt(this.state.luckyNumber));
-            let recipt = await waitForTransaction(tx.hash)
+            await waitForTransaction(tx.hash)
             this.setState({infoUpdating:false})
             this.props.luckyNumberChange();
         }
